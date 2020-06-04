@@ -8,6 +8,10 @@
     <packaging>pom</packaging>
     <name>javalab</name>
 
+    <modules>
+        <module>collection</module>
+    </modules>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <hadoop.version>2.6.4</hadoop.version>
