@@ -17,7 +17,7 @@
         <hadoop.version>2.6.4</hadoop.version>
         <hive.version>1.2.0</hive.version>
         <jdk.version>1.8</jdk.version>
-        <jcommons.version>0.3.0</jcommons.version>
+        <jmh.version>1.21</jmh.version>
     </properties>
 
     <dependencies>
@@ -27,6 +27,31 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-math3</artifactId>
+            <version>3.6.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-core</artifactId>
+            <version>${jmh.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-generator-annprocess</artifactId>
+            <version>${jmh.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -43,6 +68,10 @@
                 </includes>
             </resource>
         </resources>
+        <pluginManagement>
+            <plugins>
+            </plugins>
+        </pluginManagement>
     </build>
 
 </project>
