@@ -10,6 +10,7 @@
 
     <modules>
         <module>collection</module>
+        <module>base</module>
     </modules>
 
     <properties>
