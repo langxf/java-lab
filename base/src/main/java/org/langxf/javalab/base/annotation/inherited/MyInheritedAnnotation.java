@@ -10,7 +10,7 @@ import java.lang.annotation.RetentionPolicy;
  */
 @Documented
 @Inherited
-// 解默认的保留时间为CLASS，这使得该注解无法进入RUNTIME时期，因此想注解修饰的类可以被子类继承，必须加上
+// 注解默认的保留时间为CLASS，这使得该注解无法进入RUNTIME时期，因此想注解修饰的类可以被子类继承，必须加上
 @Retention(RetentionPolicy.RUNTIME)
 public @interface MyInheritedAnnotation {
 }
