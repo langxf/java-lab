@@ -1,5 +1,7 @@
 package org.langxf.javalab.base.annotation.reflect;
 
+import org.langxf.javalab.common.utils.StringUtils;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -23,7 +25,8 @@ public class RuntimeAnnoTest {
         /** 获取FieldAnno的注解信息 */
         outFieldAnnoInfo(clazz, buffer);
 
-        print(buffer);
+        StringUtils.println(buffer);
+
     }
 
     public static void outClassAnnoInfo(Class<?> clazz, StringBuilder buffer) {
@@ -75,12 +78,9 @@ public class RuntimeAnnoTest {
     }
 
     public static void main(String args[]) {
-        System.out.println("------111--->>>");
+        StringUtils.println("------111--->>>");
 
         outInfo();
     }
 
-    public static void print(StringBuilder buffer) {
-        System.out.println(buffer);
-    }
 }
