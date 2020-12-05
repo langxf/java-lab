@@ -1,4 +1,4 @@
-package org.langxf.javalab.common.utils;
+package org.langxf.javalab.common.util;
 
 /**
  * Created by Langxf on 2020/6/12.
