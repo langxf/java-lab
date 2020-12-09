@@ -12,7 +12,7 @@ public class TestAnnotation {
 
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         TestAnnotation testAnnotation = new TestAnnotation();
         testAnnotation.test();
     }

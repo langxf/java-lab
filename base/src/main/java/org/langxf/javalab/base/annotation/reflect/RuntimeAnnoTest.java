@@ -1,6 +1,6 @@
 package org.langxf.javalab.base.annotation.reflect;
 
-import org.langxf.javalab.common.utils.StringUtils;
+import org.langxf.javalab.common.util.StringUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -39,7 +39,7 @@ public class RuntimeAnnoTest {
     }
 
     public static void outMethodAnnoInfo(Class<?> clazz, StringBuilder buffer) {
-        Method methods[] = clazz.getDeclaredMethods();
+        Method[] methods = clazz.getDeclaredMethods();
         if (null != methods && methods.length > 0) {
             buffer.append("MethodAnno注解信息：").append("\n");
             for (Method method : methods) {
@@ -60,7 +60,7 @@ public class RuntimeAnnoTest {
     }
 
     public static void outFieldAnnoInfo(Class<?> clazz, StringBuilder buffer) {
-        Field fields[] = clazz.getDeclaredFields();
+        Field[] fields = clazz.getDeclaredFields();
         if (null != fields) {
             for (Field field : fields) {
                 if (null != field) {
@@ -77,7 +77,7 @@ public class RuntimeAnnoTest {
         }
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         StringUtils.println("------111--->>>");
 
         outInfo();

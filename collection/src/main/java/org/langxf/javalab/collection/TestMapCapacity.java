@@ -12,29 +12,34 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by Langxf on 2020/6/5.
+ * @author Langxf
+ * 测试完成时间
+ * 预热 2 轮，每次 1s
+ * 测试 5 轮，每次 3s
+ * fork 1 个线程
+ * 每个测试线程一个实例
  */
-@BenchmarkMode(Mode.AverageTime) // 测试完成时间
+@BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
-@Warmup(iterations = 2, time = 1, timeUnit = TimeUnit.SECONDS) // 预热 2 轮，每次 1s
-@Measurement(iterations = 5, time = 3, timeUnit = TimeUnit.SECONDS) // 测试 5 轮，每次 3s
-@Fork(1) // fork 1 个线程
-@State(Scope.Thread) // 每个测试线程一个实例
+@Warmup(iterations = 2, time = 1, timeUnit = TimeUnit.SECONDS)
+@Measurement(iterations = 5, time = 3, timeUnit = TimeUnit.SECONDS)
+@Fork(1)
+@State(Scope.Thread)
 public class TestMapCapacity {
 
-    static final int size = 1024;
+    static final int SIZE = 1024;
     public static void main(String[] args) throws RunnerException {
-        // 启动基准测试
+        // 启动基准测试 & 要导入的测试类
         Options opt = new OptionsBuilder()
-                .include(TestMapCapacity.class.getSimpleName()) // 要导入的测试类
+                .include(TestMapCapacity.class.getSimpleName())
                 .build();
-        new Runner(opt).run(); // 执行测试
+        new Runner(opt).run();
     }
 
     @Benchmark
     public void noSizeTest(Blackhole blackhole) {
-        Map map = new HashMap();
-        for (int i = 0; i < size; i++) {
+        Map map = new HashMap(SIZE);
+        for (int i = 0; i < SIZE; i++) {
             map.put(i, i);
         }
         // 为了避免 JIT 忽略未被使用的结果
@@ -44,7 +49,7 @@ public class TestMapCapacity {
     @Benchmark
     public void setSizeTest(Blackhole blackhole) {
         Map map = new HashMap(1367);
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < SIZE; i++) {
             map.put(i, i);
         }
         // 为了避免 JIT 忽略未被使用的结果
