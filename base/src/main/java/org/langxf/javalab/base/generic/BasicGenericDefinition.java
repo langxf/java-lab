@@ -5,7 +5,7 @@ package org.langxf.javalab.base.generic;
  * @date 2020/12/10
  * 基本泛型定义：(GenericOrigin)中暴露出来的问题，避免ClassCastException安全隐患。
  */
-public class BasicGenericDefination {
+public class BasicGenericDefinition {
 
     public static void main(String[] args) {
         rightDemo();

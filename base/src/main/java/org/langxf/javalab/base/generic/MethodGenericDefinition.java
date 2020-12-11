@@ -5,7 +5,7 @@ package org.langxf.javalab.base.generic;
  * @date 2020/12/11
  * 泛型方法
  */
-public class MethodGerericDefination {
+public class MethodGenericDefinition {
     public static void main(String[] args) {
         Integer[] intArr = fun(1,2,3);
         for (int data : intArr) {
