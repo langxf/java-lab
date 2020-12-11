@@ -8,7 +8,7 @@ package org.langxf.javalab.base.generic;
  * 2. 子类明确泛型类型，示例(MessageCodeImpl)
  *
  */
-public class GenericInterfaceDefination {
+public class GenericInterfaceDefinition {
     public static void main(String[] args) {
         // 1. 子类依然使用泛型2个示例
         IMessage<String> msg = new MessageImpl<>();
