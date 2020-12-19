@@ -6,9 +6,9 @@ package org.langxf.javalab.base.reflect.singleton;
  */
 public class HungrySingletonTest {
 	public static void main(String[] args) {
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 10; i++) {
 			new Thread(() -> {
-				System.out.println(HungrySingleton.getInstance());
+				System.out.println(Thread.currentThread().getName() + "--" + HungrySingleton.getInstance());
 			}).start();
 		}
 	}
