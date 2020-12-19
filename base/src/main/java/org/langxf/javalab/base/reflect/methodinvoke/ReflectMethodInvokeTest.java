@@ -10,9 +10,11 @@ import java.lang.reflect.Method;
  */
 public class ReflectMethodInvokeTest {
 	public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException,
-			InvocationTargetException, InstantiationException {
+			InvocationTargetException, InstantiationException, ClassNotFoundException {
 
-		Class<?> clazz = Person.class;
+		// 这里可以通过不导包，直接通过字符串类全路径加载类，避免了耦合
+		// 数据库驱动类一般就是这么加载的
+		Class<?> clazz = Class.forName("org.langxf.javalab.base.reflect.methodinvoke.Person");
 		Object obj = clazz.getDeclaredConstructor().newInstance();
 		String value = "mapleleave";
 
